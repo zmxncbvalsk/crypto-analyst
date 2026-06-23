@@ -7,6 +7,7 @@ import pl.dzik.enums.Direction;
 import pl.dzik.exception.DatabaseException;
 import pl.dzik.model.Alert;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -132,15 +133,23 @@ public class AlertDao {
      */
     public Alert mapRowToAlert(ResultSet rs) throws DatabaseException {
         try {
+            String directionStr = rs.getString("direction");
+            String createdAtStr = rs.getString("created_at");
+            BigDecimal targetPrice = rs.getBigDecimal("target_price");
+            if (directionStr == null || createdAtStr == null || targetPrice == null) {
+                throw new DatabaseException("Wartości null w wierszu");
+            }
+            Direction direction = Direction.valueOf(directionStr);
+            LocalDateTime createdAt = LocalDateTime.parse(createdAtStr);
             String triggeredAtStr = rs.getString("triggered_at");
             LocalDateTime triggeredAt = (triggeredAtStr != null) ? LocalDateTime.parse(triggeredAtStr) : null;
             return new Alert(
                     rs.getInt("id"),
                     rs.getInt("crypto_id"),
-                    rs.getBigDecimal("target_price"),
-                    Direction.valueOf(rs.getString("direction")),
+                    targetPrice,
+                    direction,
                     rs.getInt("is_triggered") == 1,
-                    LocalDateTime.parse(rs.getString("created_at")),
+                    createdAt,
                     triggeredAt
             );
         } catch (SQLException | DateTimeParseException | IllegalArgumentException e) {

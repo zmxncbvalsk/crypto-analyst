@@ -7,6 +7,7 @@ import pl.dzik.database.DatabaseManager;
 import pl.dzik.exception.DatabaseException;
 import pl.dzik.model.MarketData;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -83,16 +84,25 @@ public class MarketDataDao {
      * @return zmapowane dane rynkowe
      * @throws DatabaseException gdy dane w bazie są uszkodzone, null lub niepoprawne
      */
-    private MarketData mapRowToMarketData(ResultSet rs) throws DatabaseException {
+    public MarketData mapRowToMarketData(ResultSet rs) throws DatabaseException {
         try {
+            BigDecimal price = rs.getBigDecimal("price");
+            BigDecimal volume = rs.getBigDecimal("volume");
+            BigDecimal marketCap = rs.getBigDecimal("market_cap");
+            BigDecimal change24h = rs.getBigDecimal("change_24h");
+            String recordedAAtStr = rs.getString("recorded_at");
+            if(price == null || volume == null || marketCap == null || change24h == null || recordedAAtStr == null){
+                throw new DatabaseException("Wartości null w wierszu");
+            }
+            LocalDateTime recordedAt = LocalDateTime.parse(recordedAAtStr);
             return new MarketData(
                     rs.getInt("id"),
                     rs.getInt("crypto_id"),
-                    rs.getBigDecimal("price"),
-                    rs.getBigDecimal("volume"),
-                    rs.getBigDecimal("market_cap"),
-                    rs.getBigDecimal("change_24h"),
-                    LocalDateTime.parse(rs.getString("recorded_at"))
+                    price,
+                    volume,
+                    marketCap,
+                    change24h,
+                    recordedAt
             );
         } catch (SQLException | DateTimeParseException | IllegalArgumentException e) {
             logger.error("Błąd parsowania lub odczytu danych rynkowych z bazy.", e);

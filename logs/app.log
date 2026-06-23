@@ -91,3 +91,357 @@
 2026-06-23 14:28:19 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
 2026-06-23 14:28:20 INFO  pl.dzik.App - Zamykanie wątków w tle...
 2026-06-23 14:28:23 INFO  pl.dzik.App - Zamykanie wątków w tle...
+2026-06-23 15:29:09 ERROR pl.dzik.dao.AlertDao - Błąd parsowania lub odczytu danych alertu z SQLite.
+java.lang.NullPointerException: Name is null
+	at java.base/java.lang.Enum.valueOf(Enum.java:291)
+	at pl.dzik.enums.Direction.valueOf(Direction.java:9)
+	at pl.dzik.dao.AlertDao.mapRowToAlert(AlertDao.java:141)
+	at pl.dzik.dao.AlertDaoMappingTest.lambda$mapRowToAlert_NullDirection_ThrowDatabaseException$2(AlertDaoMappingTest.java:54)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at pl.dzik.dao.AlertDaoMappingTest.mapRowToAlert_NullDirection_ThrowDatabaseException(AlertDaoMappingTest.java:54)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2026-06-23 15:29:09 ERROR pl.dzik.dao.AlertDao - Błąd parsowania lub odczytu danych alertu z SQLite.
+java.lang.NullPointerException: text
+	at java.base/java.util.Objects.requireNonNull(Objects.java:259)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2007)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:479)
+	at pl.dzik.dao.AlertDao.mapRowToAlert(AlertDao.java:143)
+	at pl.dzik.dao.AlertDaoMappingTest.lambda$mapRowToAlert_NullCreatedAt_ThrowDatabaseException$0(AlertDaoMappingTest.java:38)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at pl.dzik.dao.AlertDaoMappingTest.mapRowToAlert_NullCreatedAt_ThrowDatabaseException(AlertDaoMappingTest.java:38)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2026-06-23 17:28:33 INFO  pl.dzik.App - Uruchamianie okna głównego aplikacji...
+2026-06-23 17:28:33 DEBUG pl.dzik.config.AppConfig - Ładowanie konfiguracji aplikacji...
+2026-06-23 17:28:33 INFO  pl.dzik.config.AppConfig - Pomyślnie załadowano konfigurację aplikacji.
+2026-06-23 17:28:33 INFO  pl.dzik.database.DatabaseInitializer - Rozpoczęcie sprawdzania i inicjalizacji tabel strukturalnych bazy danych...
+2026-06-23 17:28:33 INFO  pl.dzik.database.DatabaseInitializer - Wszystkie tabele bazy danych zostały zweryfikowane pomyślnie.
+2026-06-23 17:28:35 INFO  pl.dzik.App - Pomyślnie zarejestrowano kontrolery w silniku JavaScript
+2026-06-23 17:28:35 DEBUG pl.dzik.controller.SystemStatusController - Synchronizacja przycisku interwału odświeżania na: 2 min.
+2026-06-23 17:28:35 INFO  pl.dzik.controller.SystemStatusController - Żądanie zmiany statusu aplikacji na: RUNNING
+2026-06-23 17:28:35 DEBUG pl.dzik.controller.SystemStatusController - Pomyślnie zmieniono status aplikacji na: RUNNING (SYSTEM AKTYWNY)
+2026-06-23 17:28:35 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 17:28:35 INFO  pl.dzik.service.MarketService - Uruchamianie synchronizacji słownika kryptowalut...
+2026-06-23 17:28:35 INFO  pl.dzik.client.CoinGeckoClient - Wysyłanie zapytania do API o listę początkową kryptowalut (TOP 250)...
+2026-06-23 17:28:36 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 17:28:36 INFO  pl.dzik.client.CoinGeckoClient - Pobieranie aktualnych kursów rynkowych z API dla: [cardano]
+2026-06-23 17:28:36 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Cardano (Cena: 0.150491)
+2026-06-23 17:28:36 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 17:28:37 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 17:28:37 ERROR pl.dzik.dao.CryptoDao - Błąd podczas zapisu/aktualizacji kryptowaluty: janus-henderson-anemoy-treasury-fund
+org.sqlite.SQLiteException: [SQLITE_READONLY] Attempt to write a readonly database (attempt to write a readonly database)
+	at org.sqlite.core.DB.newSQLException(DB.java:1179)
+	at org.sqlite.core.DB.newSQLException(DB.java:1190)
+	at org.sqlite.core.DB.execute(DB.java:988)
+	at org.sqlite.core.DB.executeUpdate(DB.java:1054)
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.lambda$executeLargeUpdate$2(JDBC3PreparedStatement.java:129)
+	at org.sqlite.jdbc3.JDBC3Statement.withConnectionTimeout(JDBC3Statement.java:458)
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.executeLargeUpdate(JDBC3PreparedStatement.java:124)
+	at org.sqlite.jdbc3.JDBC3PreparedStatement.executeUpdate(JDBC3PreparedStatement.java:105)
+	at pl.dzik.dao.CryptoDao.saveOrUpdate(CryptoDao.java:49)
+	at pl.dzik.service.MarketService.synchronizeCryptoDictionary(MarketService.java:80)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-06-23 17:28:37 ERROR pl.dzik.service.MarketService - Nie udało się zapisać słownika kryptowalut w bazie: Nie udało sie zapisać danych kryptowaluty.
+2026-06-23 17:28:43 INFO  pl.dzik.dao.WatchlistDao - Zmieniono status aktywności dla pozycji watchlist ID: 21
+2026-06-23 17:28:43 INFO  pl.dzik.controller.WatchlistController - Zmieniono status aktywności dla krypto ID: 21
+2026-06-23 17:28:43 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 17:28:52 INFO  pl.dzik.dao.WatchlistDao - Usunięto crypto_id: 21 z listy obserwowanych.
+2026-06-23 17:28:52 INFO  pl.dzik.controller.WatchlistController - Usunięto z listy obserwowanych kryptowalutę o ID: 21
+2026-06-23 17:28:52 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 17:29:02 INFO  pl.dzik.dao.WatchlistDao - Dodano crypto_id: 1 do listy obserwowanych.
+2026-06-23 17:29:02 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 17:29:02 INFO  pl.dzik.client.CoinGeckoClient - Pobieranie aktualnych kursów rynkowych z API dla: [bitcoin]
+2026-06-23 17:29:02 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Bitcoin (Cena: 62218)
+2026-06-23 17:29:02 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 17:29:02 INFO  pl.dzik.controller.WatchlistController - Dodano do obserwowanych: Bitcoin
+2026-06-23 17:29:02 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 17:29:09 INFO  pl.dzik.dao.AlertDao - Zapisano nowy alert dla crypto_id: 1
+2026-06-23 17:29:09 INFO  pl.dzik.service.AlertService - Utworzono alert cenowy dla crypto_id: 1
+2026-06-23 17:29:09 INFO  pl.dzik.controller.AlertController - Zapisano nowy alert cenowy dla krypto ID: 1
+2026-06-23 17:29:09 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 17:29:13 INFO  pl.dzik.dao.AlertDao - Usunięto alert o ID: 3
+2026-06-23 17:29:13 INFO  pl.dzik.service.AlertService - Usunięto alert o ID: 3
+2026-06-23 17:29:13 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 17:29:15 INFO  pl.dzik.controller.SystemStatusController - Żądanie zmiany interwału odświeżania na: 5 min.
+2026-06-23 17:29:15 DEBUG pl.dzik.config.AppConfig - Zapisywanie konfiguracji aplikacji...
+2026-06-23 17:29:15 INFO  pl.dzik.config.AppConfig - Pomyślnie zapisano konfiguracje aplikacji.
+2026-06-23 17:29:15 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 17:29:15 INFO  pl.dzik.client.CoinGeckoClient - Pobieranie aktualnych kursów rynkowych z API dla: [bitcoin]
+2026-06-23 17:29:15 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Bitcoin (Cena: 62218)
+2026-06-23 17:29:15 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 17:29:15 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 17:29:16 INFO  pl.dzik.controller.SystemStatusController - Żądanie zmiany interwału odświeżania na: 1 min.
+2026-06-23 17:29:16 DEBUG pl.dzik.config.AppConfig - Zapisywanie konfiguracji aplikacji...
+2026-06-23 17:29:16 INFO  pl.dzik.config.AppConfig - Pomyślnie zapisano konfiguracje aplikacji.
+2026-06-23 17:29:16 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 17:29:16 INFO  pl.dzik.client.CoinGeckoClient - Pobieranie aktualnych kursów rynkowych z API dla: [bitcoin]
+2026-06-23 17:29:16 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Bitcoin (Cena: 62218)
+2026-06-23 17:29:17 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 17:29:17 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 17:29:26 INFO  pl.dzik.App - Zamykanie wątków w tle...
+2026-06-23 17:57:06 ERROR pl.dzik.dao.MarketDataDao - Błąd parsowania lub odczytu danych rynkowych z bazy.
+java.time.format.DateTimeParseException: Text 'niepoprawny-format-daty' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2108)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:494)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:479)
+	at pl.dzik.dao.MarketDataDao.mapRowToMarketData(MarketDataDao.java:97)
+	at pl.dzik.dao.MarketDataDaoMappingTest.lambda$mapToMarketData_InvalidCreatedAtFormat_ThrowDateTimeParseException$5(MarketDataDaoMappingTest.java:99)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at pl.dzik.dao.MarketDataDaoMappingTest.mapToMarketData_InvalidCreatedAtFormat_ThrowDateTimeParseException(MarketDataDaoMappingTest.java:99)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:767)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$8(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:156)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5TestRunnerHelper.execute(JUnit5TestRunnerHelper.java:134)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:70)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:225)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:61)
+2026-06-23 18:02:03 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:02:03 INFO  pl.dzik.service.MarketService - Brak aktywnych kryptowalut do monitorowania.
+2026-06-23 18:02:03 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:02:03 INFO  pl.dzik.service.MarketService - Brak aktywnych kryptowalut do monitorowania.
+2026-06-23 18:07:35 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:07:35 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Bitcoin (Cena: 65000)
+2026-06-23 18:07:35 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 18:07:36 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:07:36 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 18:09:27 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:09:27 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Bitcoin (Cena: 65000)
+2026-06-23 18:09:27 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 18:09:28 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:09:28 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 18:10:29 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:10:29 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Bitcoin (Cena: 65000)
+2026-06-23 18:10:29 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 18:10:29 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:10:29 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 18:10:29 INFO  pl.dzik.service.MarketService - Uruchamianie synchronizacji słownika kryptowalut...
+2026-06-23 18:10:29 ERROR pl.dzik.service.MarketService - Nie udało się zsynchronizować słownika kryptowalut z API: Błąd połączenia sieciowego z serwerem CoinGecko
+2026-06-23 18:10:29 INFO  pl.dzik.service.MarketService - Uruchamianie synchronizacji słownika kryptowalut...
+2026-06-23 18:10:29 ERROR pl.dzik.service.MarketService - Nie udało się zapisać słownika kryptowalut w bazie: Błąd zapisu
+2026-06-23 18:11:58 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:11:58 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Bitcoin (Cena: 65000)
+2026-06-23 18:11:58 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 18:11:58 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:11:58 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 18:11:58 INFO  pl.dzik.service.MarketService - Uruchamianie synchronizacji słownika kryptowalut...
+2026-06-23 18:11:58 ERROR pl.dzik.service.MarketService - Nie udało się zapisać słownika kryptowalut w bazie: Błąd zapisu
+2026-06-23 18:11:58 INFO  pl.dzik.service.MarketService - Uruchamianie synchronizacji słownika kryptowalut...
+2026-06-23 18:11:58 ERROR pl.dzik.service.MarketService - Nie udało się zsynchronizować słownika kryptowalut z API: Błąd połączenia sieciowego z serwerem CoinGecko
+2026-06-23 18:12:17 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:12:17 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Bitcoin (Cena: 65000)
+2026-06-23 18:12:17 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 18:12:17 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 18:12:17 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 18:12:17 INFO  pl.dzik.service.MarketService - Uruchamianie synchronizacji słownika kryptowalut...
+2026-06-23 18:12:17 ERROR pl.dzik.service.MarketService - Nie udało się zsynchronizować słownika kryptowalut z API: Błąd połączenia sieciowego z serwerem CoinGecko
+2026-06-23 18:12:17 INFO  pl.dzik.service.MarketService - Uruchamianie synchronizacji słownika kryptowalut...
+2026-06-23 18:12:17 ERROR pl.dzik.service.MarketService - Nie udało się zapisać słownika kryptowalut w bazie: Błąd zapisu
+2026-06-23 18:17:55 INFO  pl.dzik.dao.AlertDao - Zapisano nowy alert dla crypto_id: 1
+2026-06-23 18:17:55 INFO  pl.dzik.service.AlertService - Utworzono alert cenowy dla crypto_id: 1
+2026-06-23 18:17:55 INFO  pl.dzik.service.AlertService - ALERT! Kryptowaluta Bitcoin (BTC) przebiło cenę docelową 50000!. Obecna cena: 59000.00
+2026-06-23 18:17:55 INFO  pl.dzik.dao.AlertDao - Alert o ID: 4 został pomyślnie oznaczony jako wyzwolony.
