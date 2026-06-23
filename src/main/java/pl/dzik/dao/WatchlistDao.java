@@ -110,4 +110,29 @@ public class WatchlistDao {
         }
         return list;
     }
+
+    /**
+     * Zwraca listę id aktywnych kryptowalut
+     *
+     * @return lista id aktywnych kryptowalut
+     * @throws DatabaseException gdy wystąpi błąd podczas odczytu z bazy
+     */
+    public List<String> findActiveCoinGeckoIds() throws DatabaseException {
+        List<String> list = new ArrayList<>();
+        String sql = """
+                SELECT c.coingecko_id
+                FROM watchlist w
+                JOIN crypto c ON w.crypto_id = c.id
+                WHERE w.is_active = 1
+                """;
+        try (Connection conn = DatabaseManager.getConnection(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                list.add(rs.getString("coingecko_id"));
+            }
+        } catch (SQLException e) {
+            logger.error("Błąd podczas pobierania całej listy obserwowanych.", e);
+            throw new DatabaseException("Nie udało się załadować listy obserwowanych.", e);
+        }
+        return list;
+    }
 }
