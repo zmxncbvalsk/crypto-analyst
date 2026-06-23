@@ -124,12 +124,22 @@ public class AlertController {
             }
             int cryptoId = Integer.parseInt(cryptoObj.toString());
             Direction direction = Direction.valueOf(directionObj.toString());
-            BigDecimal targetPrice = new BigDecimal(priceObj.toString());
-            Alert newAlert = new Alert(0, cryptoId, targetPrice, direction, false, LocalDateTime.now(), null);
-            alertService.createAlert(newAlert);
-            webEngine.executeScript("document.getElementById('alert-price-input').value = '';");
-            app.refreshAllUI();
-            logger.info("Zapisano nowy alert cenowy dla krypto ID: {}", cryptoId);
+            String priceStr = priceObj.toString().trim();
+            if (priceStr.isEmpty()) {
+                logger.warn("Pusta cena alertu");
+                return;
+            }
+            try {
+                BigDecimal targetPrice = new BigDecimal(priceStr);
+                Alert newAlert = new Alert(0, cryptoId, targetPrice, direction, false, LocalDateTime.now(), null);
+                alertService.createAlert(newAlert);
+                webEngine.executeScript("document.getElementById('alert-price-input').value = '';");
+                app.refreshAllUI();
+                logger.info("Zapisano nowy alert cenowy dla krypto ID: {}", cryptoId);
+            } catch (NumberFormatException e) {
+                logger.warn("Zła cena: {}", priceStr);
+                return;
+            }
         } catch (AlertValidationException e) {
             logger.warn("Walidacja alertu nie powiodła się: {}", e.getMessage());
         } catch (IllegalArgumentException e) {

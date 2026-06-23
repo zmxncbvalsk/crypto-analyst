@@ -32,14 +32,6 @@ public class CoinGeckoClient {
     private final Gson gson;
 
     /**
-     * Konstruktor tworzący zależności i konfigurujący klienta HTTP.
-     */
-    public CoinGeckoClient() {
-        this.client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(10)).build();
-        this.gson = new Gson();
-    }
-
-    /**
      * Konstruktor tworzący zależności i konfigurujący klienta HTTP,
      * wraz ze wstrzykniętymi zależnościami, pozwalającymi na mock w testach
      *
@@ -64,9 +56,21 @@ public class CoinGeckoClient {
         try {
             HttpResponse<String> response = sendGetRequest(finalUrl);
             validateSuccessStatus(response.statusCode(), "pobieranie listy kryptowalut");
-            try{
-                return Arrays.asList(gson.fromJson(response.body(), CryptoDto[].class));
-            } catch (JsonSyntaxException | IllegalStateException e){
+            String body = response.body();
+            if (body == null || body.isBlank()) {
+                throw new ApiException("Puste response body");
+            }
+            try {
+                if (body.isBlank()) {
+                    throw new ApiException("Puste response body");
+                }
+                if (!body.trim().startsWith("[")) {
+                    throw new ApiException("Zły format JSON z API");
+                }
+                CryptoDto[] arr = gson.fromJson(body, CryptoDto[].class);
+                if (arr == null) return List.of();
+                return List.of(arr);
+            } catch (JsonSyntaxException | IllegalStateException e) {
                 logger.error("Błędny format JSON z API", e);
                 throw new ApiException("Błędny format JSON z API", e);
             }
@@ -98,9 +102,21 @@ public class CoinGeckoClient {
         try {
             HttpResponse<String> response = sendGetRequest(finalUrl);
             validateSuccessStatus(response.statusCode(), "pobieranie notowań rynkowych");
-            try{
-                return Arrays.asList(gson.fromJson(response.body(), MarketDataDto[].class));
-            } catch (JsonSyntaxException | IllegalStateException e){
+            String body = response.body();
+            if (body == null || body.isBlank()) {
+                throw new ApiException("Puste response body");
+            }
+            try {
+                if (body.isBlank()) {
+                    throw new ApiException("Puste response body");
+                }
+                if (!body.trim().startsWith("[")) {
+                    throw new ApiException("Zły format JSON z API");
+                }
+                MarketDataDto[] arr = gson.fromJson(body, MarketDataDto[].class);
+                if (arr == null) return List.of();
+                return List.of(arr);
+            } catch (JsonSyntaxException | IllegalStateException e) {
                 logger.error("Błędny format JSON z API", e);
                 throw new ApiException("Błędny format JSON z API", e);
             }

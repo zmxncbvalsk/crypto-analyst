@@ -1,5 +1,6 @@
 package pl.dzik.service;
 
+import com.google.gson.Gson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pl.dzik.client.CoinGeckoClient;
@@ -14,6 +15,8 @@ import pl.dzik.model.Crypto;
 import pl.dzik.model.MarketData;
 import pl.dzik.model.Watchlist;
 
+import java.net.http.HttpClient;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +40,7 @@ public class MarketService {
      * Tworzy serwis z domyślnymi zależnościami.
      */
     public MarketService() {
-        this.client = new CoinGeckoClient();
+        this.client = new CoinGeckoClient(HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(10)).build(), new Gson());
         this.cryptoDao = new CryptoDao();
         this.watchlistDao = new WatchlistDao();
         this.marketDataDao = new MarketDataDao();

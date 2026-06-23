@@ -1,5 +1,6 @@
 package pl.dzik;
 
+import com.google.gson.Gson;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.concurrent.Worker;
@@ -29,6 +30,8 @@ import pl.dzik.service.AlertService;
 import pl.dzik.service.MarketService;
 
 import java.net.URL;
+import java.net.http.HttpClient;
+import java.time.Duration;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -47,7 +50,7 @@ public class App extends Application {
     private final CryptoDao cryptoDao = new CryptoDao();
     private final MarketDataDao marketDataDao = new MarketDataDao();
     private final AlertService alertService = new AlertService(alertDao);
-    private final MarketService marketService = new MarketService(new CoinGeckoClient(), cryptoDao, watchlistDao, marketDataDao, alertService);
+    private final MarketService marketService = new MarketService(new CoinGeckoClient(HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(10)).build(), new Gson()), cryptoDao, watchlistDao, marketDataDao, alertService);
 
     private SystemStatusController systemStatusController;
     private WatchlistController watchlistController;
