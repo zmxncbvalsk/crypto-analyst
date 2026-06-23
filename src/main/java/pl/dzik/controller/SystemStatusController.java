@@ -73,7 +73,7 @@ public class SystemStatusController {
             logger.warn("Pominięto synchronizację przycisku interwału — dokument DOM jest niedostępny.");
             return;
         }
-        applyIntervalButtonStyles(document, app.getCurrentInterval(), minutes);
+        applyIntervalButtonStyles(document, app.getCurrentIntervalMinutes(), minutes);
     }
 
     public void changeInterval(int minutes){
@@ -85,7 +85,7 @@ public class SystemStatusController {
         }
         try{
             AppConfig.set("app.interval", String.valueOf(minutes));
-            applyIntervalButtonStyles(document, app.getCurrentInterval(), minutes);
+            applyIntervalButtonStyles(document, app.getCurrentIntervalMinutes(), minutes);
             app.updateScheduleInterval(minutes);
         } catch (ApplicationException e){
             logger.error("Nie udało się zapisać interwału odświeżania w konfiguracji.", e);
