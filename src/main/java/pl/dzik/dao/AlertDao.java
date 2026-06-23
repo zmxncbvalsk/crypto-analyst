@@ -130,7 +130,7 @@ public class AlertDao {
      * @return zmapowany alert
      * @throws DatabaseException gdy dane w bazie są uszkodzone, null lub niepoprawne
      */
-    private Alert mapRowToAlert(ResultSet rs) throws DatabaseException {
+    public Alert mapRowToAlert(ResultSet rs) throws DatabaseException {
         try {
             String triggeredAtStr = rs.getString("triggered_at");
             LocalDateTime triggeredAt = (triggeredAtStr != null) ? LocalDateTime.parse(triggeredAtStr) : null;

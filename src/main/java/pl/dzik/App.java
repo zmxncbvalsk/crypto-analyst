@@ -74,8 +74,6 @@ public class App extends Application {
             loadUserInterface(webEngine);
             currentIntervalMinutes = Integer.parseInt(AppConfig.get("app.interval", "1"));
             service = Executors.newSingleThreadScheduledExecutor();
-            updateScheduleInterval(currentIntervalMinutes);
-            startBackgroundCryptoSync();
             Scene scene = new Scene(webView, 1440, 900);
             primaryStage.setTitle("Crypto Analyst");
             primaryStage.setScene(scene);
@@ -152,6 +150,8 @@ public class App extends Application {
                 window.setMember("marketController", marketController);
                 window.setMember("alertController", alertController);
                 logger.info("Pomyślnie zarejestrowano kontrolery w silniku JavaScript");
+                updateScheduleInterval(currentIntervalMinutes);
+                startBackgroundCryptoSync();
                 refreshAllUI();
                 systemStatusController.highlightIntervalButton(getCurrentIntervalMinutes());
                 systemStatusController.changeSystemStatus(SystemStatus.RUNNING, "SYSTEM AKTYWNY");

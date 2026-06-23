@@ -16,3 +16,78 @@
 2026-06-23 14:26:07 INFO  pl.dzik.service.MarketService - Brak aktywnych kryptowalut do monitorowania.
 2026-06-23 14:26:07 INFO  pl.dzik.controller.SystemStatusController - Żądanie zmiany statusu aplikacji na: ERROR
 2026-06-23 14:26:07 ERROR pl.dzik.controller.SystemStatusController - Błąd podczas zmiany statusu aplikacji — dokument DOM jest niedostępny.
+2026-06-23 14:27:07 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 14:27:07 INFO  pl.dzik.service.MarketService - Brak aktywnych kryptowalut do monitorowania.
+2026-06-23 14:27:07 INFO  pl.dzik.controller.SystemStatusController - Żądanie zmiany statusu aplikacji na: ERROR
+2026-06-23 14:27:07 ERROR pl.dzik.controller.SystemStatusController - Błąd podczas zmiany statusu aplikacji — dokument DOM jest niedostępny.
+2026-06-23 14:27:25 INFO  pl.dzik.App - Uruchamianie okna głównego aplikacji...
+2026-06-23 14:27:25 DEBUG pl.dzik.config.AppConfig - Ładowanie konfiguracji aplikacji...
+2026-06-23 14:27:25 INFO  pl.dzik.config.AppConfig - Pomyślnie załadowano konfigurację aplikacji.
+2026-06-23 14:27:25 INFO  pl.dzik.database.DatabaseInitializer - Rozpoczęcie sprawdzania i inicjalizacji tabel strukturalnych bazy danych...
+2026-06-23 14:27:25 INFO  pl.dzik.database.DatabaseInitializer - Wszystkie tabele bazy danych zostały zweryfikowane pomyślnie.
+2026-06-23 14:27:27 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 14:27:27 INFO  pl.dzik.service.MarketService - Brak aktywnych kryptowalut do monitorowania.
+2026-06-23 14:27:27 INFO  pl.dzik.service.MarketService - Uruchamianie synchronizacji słownika kryptowalut...
+2026-06-23 14:27:27 INFO  pl.dzik.client.CoinGeckoClient - Wysyłanie zapytania do API o listę początkową kryptowalut (TOP 250)...
+2026-06-23 14:27:27 INFO  pl.dzik.controller.SystemStatusController - Żądanie zmiany statusu aplikacji na: ERROR
+2026-06-23 14:27:27 ERROR pl.dzik.controller.SystemStatusController - Błąd podczas zmiany statusu aplikacji — dokument DOM jest niedostępny.
+2026-06-23 14:27:28 INFO  pl.dzik.App - Pomyślnie zarejestrowano kontrolery w silniku JavaScript
+2026-06-23 14:27:28 DEBUG pl.dzik.controller.SystemStatusController - Synchronizacja przycisku interwału odświeżania na: 1 min.
+2026-06-23 14:27:28 INFO  pl.dzik.controller.SystemStatusController - Żądanie zmiany statusu aplikacji na: RUNNING
+2026-06-23 14:27:28 DEBUG pl.dzik.controller.SystemStatusController - Pomyślnie zmieniono status aplikacji na: RUNNING (SYSTEM AKTYWNY)
+2026-06-23 14:27:28 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 14:27:30 INFO  pl.dzik.service.MarketService - Synchronizacja słownika zakończona sukcesem. Zaktualizowano 250 pozycji.
+2026-06-23 14:27:37 INFO  pl.dzik.dao.WatchlistDao - Dodano crypto_id: 1 do listy obserwowanych.
+2026-06-23 14:27:37 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 14:27:37 INFO  pl.dzik.client.CoinGeckoClient - Pobieranie aktualnych kursów rynkowych z API dla: [bitcoin]
+2026-06-23 14:27:37 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Bitcoin (Cena: 62310)
+2026-06-23 14:27:37 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 14:27:37 INFO  pl.dzik.controller.WatchlistController - Dodano do obserwowanych: Bitcoin
+2026-06-23 14:27:37 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 14:27:44 INFO  pl.dzik.dao.AlertDao - Zapisano nowy alert dla crypto_id: 1
+2026-06-23 14:27:44 INFO  pl.dzik.service.AlertService - Utworzono alert cenowy dla crypto_id: 1
+2026-06-23 14:27:44 INFO  pl.dzik.controller.AlertController - Zapisano nowy alert cenowy dla krypto ID: 1
+2026-06-23 14:27:44 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 14:27:49 INFO  pl.dzik.dao.WatchlistDao - Zmieniono status aktywności dla pozycji watchlist ID: 1
+2026-06-23 14:27:49 INFO  pl.dzik.controller.WatchlistController - Zmieniono status aktywności dla krypto ID: 1
+2026-06-23 14:27:49 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 14:27:50 INFO  pl.dzik.dao.WatchlistDao - Zmieniono status aktywności dla pozycji watchlist ID: 1
+2026-06-23 14:27:50 INFO  pl.dzik.controller.WatchlistController - Zmieniono status aktywności dla krypto ID: 1
+2026-06-23 14:27:51 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 14:27:59 INFO  pl.dzik.dao.WatchlistDao - Dodano crypto_id: 21 do listy obserwowanych.
+2026-06-23 14:27:59 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 14:27:59 INFO  pl.dzik.client.CoinGeckoClient - Pobieranie aktualnych kursów rynkowych z API dla: [bitcoin,cardano]
+2026-06-23 14:27:59 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Bitcoin (Cena: 62304)
+2026-06-23 14:27:59 INFO  pl.dzik.service.AlertService - ALERT! Kryptowaluta Bitcoin (BTC) przebiło cenę docelową 5!. Obecna cena: 62304
+2026-06-23 14:27:59 INFO  pl.dzik.dao.AlertDao - Alert o ID: 1 został pomyślnie oznaczony jako wyzwolony.
+2026-06-23 14:27:59 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Cardano (Cena: 0.151502)
+2026-06-23 14:27:59 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 14:27:59 INFO  pl.dzik.controller.WatchlistController - Dodano do obserwowanych: Cardano
+2026-06-23 14:27:59 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 14:28:07 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 14:28:07 INFO  pl.dzik.client.CoinGeckoClient - Pobieranie aktualnych kursów rynkowych z API dla: [bitcoin,cardano]
+2026-06-23 14:28:07 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Bitcoin (Cena: 62304)
+2026-06-23 14:28:07 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Cardano (Cena: 0.151502)
+2026-06-23 14:28:07 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 14:28:07 INFO  pl.dzik.controller.SystemStatusController - Żądanie zmiany statusu aplikacji na: ERROR
+2026-06-23 14:28:07 ERROR pl.dzik.controller.SystemStatusController - Błąd podczas zmiany statusu aplikacji — dokument DOM jest niedostępny.
+2026-06-23 14:28:12 INFO  pl.dzik.dao.WatchlistDao - Usunięto crypto_id: 1 z listy obserwowanych.
+2026-06-23 14:28:12 INFO  pl.dzik.controller.WatchlistController - Usunięto z listy obserwowanych kryptowalutę o ID: 1
+2026-06-23 14:28:12 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 14:28:15 INFO  pl.dzik.dao.AlertDao - Zapisano nowy alert dla crypto_id: 21
+2026-06-23 14:28:15 INFO  pl.dzik.service.AlertService - Utworzono alert cenowy dla crypto_id: 21
+2026-06-23 14:28:15 INFO  pl.dzik.controller.AlertController - Zapisano nowy alert cenowy dla krypto ID: 21
+2026-06-23 14:28:15 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 14:28:17 INFO  pl.dzik.dao.AlertDao - Usunięto alert o ID: 2
+2026-06-23 14:28:17 INFO  pl.dzik.service.AlertService - Usunięto alert o ID: 2
+2026-06-23 14:28:17 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 14:28:18 INFO  pl.dzik.controller.SystemStatusController - Żądanie zmiany interwału odświeżania na: 2 min.
+2026-06-23 14:28:18 DEBUG pl.dzik.config.AppConfig - Zapisywanie konfiguracji aplikacji...
+2026-06-23 14:28:18 INFO  pl.dzik.config.AppConfig - Pomyślnie zapisano konfiguracje aplikacji.
+2026-06-23 14:28:18 INFO  pl.dzik.service.MarketService - Rozpoczęcie procedury odświeżania notowań rynkowych...
+2026-06-23 14:28:18 INFO  pl.dzik.client.CoinGeckoClient - Pobieranie aktualnych kursów rynkowych z API dla: [cardano]
+2026-06-23 14:28:19 DEBUG pl.dzik.service.MarketService - Zarchiwizowano próbkę cenową dla: Cardano (Cena: 0.15148)
+2026-06-23 14:28:19 INFO  pl.dzik.service.MarketService - Zakończono procedurę odświeżania notowań rynkowych
+2026-06-23 14:28:19 INFO  pl.dzik.App - Odświeżono wszystkie komponenty interfejsu.
+2026-06-23 14:28:20 INFO  pl.dzik.App - Zamykanie wątków w tle...
+2026-06-23 14:28:23 INFO  pl.dzik.App - Zamykanie wątków w tle...
