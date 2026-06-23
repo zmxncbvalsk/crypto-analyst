@@ -75,7 +75,7 @@ public class WatchlistDao {
                 UPDATE watchlist
                 SET is_active =
                     CASE WHEN is_active = 1 THEN 0
-                    ELSE 1 END WHERE crypto_id = ?
+                    ELSE 1 END WHERE id = ?
                 """;
         try (Connection conn = DatabaseManager.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, watchlistId);
