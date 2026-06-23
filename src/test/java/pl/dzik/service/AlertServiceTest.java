@@ -40,32 +40,28 @@ public class AlertServiceTest {
 
     @BeforeEach
     void setUp(){
-        alertService = new AlertService(new AlertDao());
+        alertService = new AlertService(alertDao);
     }
 
     @Test
     @DisplayName("Powinien wyzwolić alert, gdy cena wzrośnie powyżej progu ABOVE")
-    void checkAndTriggerAlerts_CenaPowyzejProgu_WyzwoleAlert() throws DatabaseException {
+    void checkAndTriggerAlerts_priceAboveThreshold_triggersAlert() throws DatabaseException {
         Crypto crypto = new Crypto(1, "bitcoin", "btc", "Bitcoin", "btc.png", 1);
         BigDecimal currentPrice = new BigDecimal("65000.00");
         Alert alert = new Alert(1, 1, new BigDecimal("60000.00"), Direction.ABOVE, false, LocalDateTime.now(), null);
         when(alertDao.findActiveAlerts()).thenReturn(List.of(alert));
-
         alertService.checkAndTriggerAlerts(crypto, currentPrice);
-
         verify(alertDao).markAsTriggered(1);
     }
 
     @Test
     @DisplayName("Nie powinien wyzwalać alertu, gdy cena wzrosła, ale nie osiągnęła progu ABOVE")
-    void checkAndTriggerAlerts_priceAboveThreshold_doesNothing() throws DatabaseException {
+    void checkAndTriggerAlerts_priceBelowThreshold_doesNothing() throws DatabaseException {
         Crypto crypto = new Crypto(1, "bitcoin", "btc", "Bitcoin", "btc.png", 1);
         BigDecimal currentPrice = new BigDecimal("59000.00");
         Alert alert = new Alert(1, 1, new BigDecimal("60000.00"), Direction.ABOVE, false, LocalDateTime.now(), null);
         when(alertDao.findActiveAlerts()).thenReturn(List.of(alert));
-
         alertService.checkAndTriggerAlerts(crypto, currentPrice);
-
         verify(alertDao, never()).markAsTriggered(anyInt());
     }
 
@@ -76,9 +72,7 @@ public class AlertServiceTest {
         BigDecimal currentPrice = new BigDecimal("2900.00");
         Alert alert = new Alert(1, 1, new BigDecimal("3000.00"), Direction.BELOW, false, LocalDateTime.now(), null);
         when(alertDao.findActiveAlerts()).thenReturn(List.of(alert));
-
         alertService.checkAndTriggerAlerts(crypto, currentPrice);
-
         verify(alertDao).markAsTriggered(1);
     }
 

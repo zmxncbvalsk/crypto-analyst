@@ -1,6 +1,7 @@
 package pl.dzik.client;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -63,7 +64,12 @@ public class CoinGeckoClient {
         try {
             HttpResponse<String> response = sendGetRequest(finalUrl);
             validateSuccessStatus(response.statusCode(), "pobieranie listy kryptowalut");
-            return Arrays.asList(gson.fromJson(response.body(), CryptoDto[].class));
+            try{
+                return Arrays.asList(gson.fromJson(response.body(), CryptoDto[].class));
+            } catch (JsonSyntaxException | IllegalStateException e){
+                logger.error("Błędny format JSON z API", e);
+                throw new ApiException("Błędny format JSON z API", e);
+            }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             logger.error("Przerwano połączenie sieciowe z API CoinGecko.", e);
@@ -92,7 +98,12 @@ public class CoinGeckoClient {
         try {
             HttpResponse<String> response = sendGetRequest(finalUrl);
             validateSuccessStatus(response.statusCode(), "pobieranie notowań rynkowych");
-            return Arrays.asList(gson.fromJson(response.body(), MarketDataDto[].class));
+            try{
+                return Arrays.asList(gson.fromJson(response.body(), MarketDataDto[].class));
+            } catch (JsonSyntaxException | IllegalStateException e){
+                logger.error("Błędny format JSON z API", e);
+                throw new ApiException("Błędny format JSON z API", e);
+            }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             logger.error("Przerwano odświeżanie kursów rynkowych z API.", e);
