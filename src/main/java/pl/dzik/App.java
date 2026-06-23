@@ -70,6 +70,8 @@ public class App extends Application {
             this.watchlistController = new WatchlistController(webEngine, watchlistDao, cryptoDao, marketService, systemStatusController, this);
             this.marketController = new MarketController(webEngine, watchlistDao, cryptoDao, marketDataDao, systemStatusController);
             this.alertController = new AlertController(webEngine, watchlistDao, cryptoDao, alertDao, alertService, systemStatusController, this);
+            registerControllers(webEngine);
+            loadUserInterface(webEngine);
             currentIntervalMinutes = Integer.parseInt(AppConfig.get("app.interval", "1"));
             service = Executors.newSingleThreadScheduledExecutor();
             updateScheduleInterval(currentIntervalMinutes);
