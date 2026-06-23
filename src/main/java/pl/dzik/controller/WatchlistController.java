@@ -204,7 +204,7 @@ public class WatchlistController {
                     </div>
                 """.formatted(
                 crypto.image(), crypto.symbol(), crypto.symbol().toUpperCase(),
-                item.isActive() ? "on" : "", item.cryptoId(), item.cryptoId());
+                item.isActive() ? "on" : "", item.id(), crypto.id());
     }
 
     /**

@@ -51,16 +51,32 @@ public class WatchlistDao {
      * @throws DatabaseException gdy operacja usunięcia nie powiedzie się
      */
     public void removeByCryptoId(int cryptoId) throws DatabaseException {
-        String sql = """
+        String alertSql = """
+                DELETE FROM alert WHERE crypto_id = ?
+                """;
+        String watchlistSql = """
                 DELETE FROM watchlist WHERE crypto_id = ?
                 """;
-        try (Connection conn = DatabaseManager.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setInt(1, cryptoId);
-            ps.executeUpdate();
-            logger.info("Usunięto crypto_id: {} z listy obserwowanych.", cryptoId);
+        try (Connection conn = DatabaseManager.getConnection()) {
+            conn.setAutoCommit(false);
+            try (PreparedStatement psAlerts = conn.prepareStatement(alertSql);
+                 PreparedStatement psWatchlist = conn.prepareStatement(watchlistSql)) {
+                psAlerts.setInt(1, cryptoId);
+                psAlerts.executeUpdate();
+                psWatchlist.setInt(1, cryptoId);
+                psWatchlist.executeUpdate();
+                conn.commit();
+                logger.info("Pomyślnie usunięto crypto_id: {} z watchlisty oraz powiązanych alertów.", cryptoId);
+
+            } catch (SQLException e) {
+                conn.rollback();
+                throw e;
+            } finally {
+                conn.setAutoCommit(true);
+            }
         } catch (SQLException e) {
-            logger.error("Błąd podczas usuwania z listy obserwowanych dla crypto_id: {}", cryptoId, e);
-            throw new DatabaseException("Nie udało się usunąć pozycji z listy obserwowanych.", e);
+            logger.error("Błąd podczas usuwania z listy obserwowanych i alertów dla crypto_id: {}", cryptoId, e);
+            throw new DatabaseException("Nie udało się pomyślnie usunąć pozycji.", e);
         }
     }
 
@@ -75,7 +91,7 @@ public class WatchlistDao {
                 UPDATE watchlist
                 SET is_active =
                     CASE WHEN is_active = 1 THEN 0
-                    ELSE 1 END WHERE id = ?
+                    ELSE 1 END WHERE crypto_id = ?
                 """;
         try (Connection conn = DatabaseManager.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, watchlistId);
