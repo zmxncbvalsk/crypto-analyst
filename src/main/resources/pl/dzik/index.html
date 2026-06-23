@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Crypto Analyst</title>
+</head>
+<body>
+<div class="app">
+    <header class="topbar">
+        <div class="brand">
+            <div>
+                <h1>Crypto Analyst</h1>
+                <p>System monitorowania i analizy rynków kryptowalutowych.</p>
+            </div>
+        </div>
+        <div class="intervals" id="interval-container" aria-label="Interwał odświeżania">
+            <button id="btn-interval-1" onclick="systemStatusController.changeInterval(1)">1m</button>
+            <button id="btn-interval-2" onclick="systemStatusController.changeInterval(2)">2m</button>
+            <button id="btn-interval-5" onclick="systemStatusController.changeInterval(5)">5m</button>
+            <button id="btn-interval-15" onclick="systemStatusController.changeInterval(15)">15m</button>
+            <button id="btn-interval-30" onclick="systemStatusController.changeInterval(30)">30m</button>
+            <button id="btn-interval-60" onclick="systemStatusController.changeInterval(60)">1h</button>
+        </div>
+    </header>
+    <aside class="sidebar">
+        <section class="card">
+            <div class="section-header">
+                <h2>Dodaj kryptowalutę</h2>
+            </div>
+            <div class="search-box">
+                <label for="search-input"></label>
+                <input type="text" id="search-input" placeholder="Wpisz nazwę (np. bitcoin)" autocomplete="off" oninput="watchlistController.handleSearch()" />
+                <button id="search-add-btn" class="add-icon add-crypto-btn" onclick="watchlistController.handleAddFromSearch()">+</button>
+            </div>
+            <ul id="search-results-list" class="autocomplete-list"></ul>
+        </section>
+
+        <section class="card">
+            <div class="watchlist-header">
+                <h2>Obserwowane</h2>
+            </div>
+            <div class="watchlist" id="watchlist-container"></div>
+        </section>
+    </aside>
+    <main class="content">
+        <div class="main-panel">
+            <section class="card table-card">
+                <div class="table-head">
+                    <div class="section-header">
+                        <h2>Obserwowane aktywa</h2>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Ikona</th>
+                            <th>Kryptowaluta</th>
+                            <th>Cena (USD)</th>
+                            <th>24h zmiana</th>
+                            <th>24h wolumen</th>
+                            <th>Market cap</th>
+                        </tr>
+                        </thead>
+                        <tbody id="market-table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="card">
+                <div class="alert-header">
+                    <div>
+                        <h2>Ustaw alert dla aktywa</h2>
+                    </div>
+                </div>
+                <div class="alerts-grid">
+                    <div class="field">
+                        <label for="alert-crypto-select">Kryptowaluta</label>
+                        <select id="alert-crypto-select" class="active-option-list"></select>
+                    </div>
+                    <div class="field">
+                        <label for="alert-direction-select">Gdy cena</label>
+                        <select id="alert-direction-select" class="alert-type-option-list">
+                            <option value="ABOVE">Wzrośnie do</option>
+                            <option value="BELOW">Spadnie do</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="alert-price-input">Do ceny (USD)</label>
+                        <input type="number" id="alert-price-input" placeholder="Wpisz cenę" step="0.01" min="0" />
+                    </div>
+                    <button id="alert-add-btn" class="add-btn" onclick="alertController.handleCreateAlert()">Dodaj alert</button>
+                </div>
+            </section>
+            <section class="card">
+                <div class="section-header">
+                    <div>
+                        <h2>Lista alertów</h2>
+                    </div>
+                </div>
+                <div class="alerts-list" id="alerts-container"></div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="status-wrap">
+            <span id="system-status-chip" class="status-chip">ŁADOWANIE...</span>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
