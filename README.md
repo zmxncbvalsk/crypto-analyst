@@ -46,7 +46,7 @@ mvn clean package
 
 ##  Uruchomienie aplikacji
 ```bash
-java -jar target/crypto-analyst-1.0-SNAPSHOT-shaded.jar
+java -jar target/crypto-analyst-1.0-SNAPSHOT.jar
 ```
 
 ## Instrukcja Użytkownika (Obsługa Programu)
